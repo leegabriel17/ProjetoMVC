@@ -1,97 +1,139 @@
 package br.edu.ifsp.tela;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+
+import java.awt.Font;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
+import javax.swing.JSpinner;
+
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
-import javax.swing.JTextPane;
+import javax.swing.SpinnerNumberModel;
 import javax.swing.JLabel;
 
-public class FrameGerecia extends JFrame {
+public class FrameGerencia extends JFrame {
 
-	private JPanel contentPane;
+
 	private JTextField txtInsiraOId;
 	private JTextField txtNome;
 	private JTextField txtIdade;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					FrameGerecia frame = new FrameGerecia();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
-	public FrameGerecia() {
+	private JButton btnconsultar;
+	private JButton btneditar;
+	private JButton btnremover;
+	private int id;
+	
+	public FrameGerencia() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 321, 265);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
 		
-		JButton btnConsultar = new JButton("Consultar");
-		btnConsultar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnConsultar.setBounds(107, 28, 89, 23);
-		contentPane.add(btnConsultar);
+		setContentPane(getContentPane());
+		getContentPane().setLayout(null);
+		
+		btnconsultar = new JButton("Consultar");
+		btnconsultar.setBounds(107, 28, 89, 23);
+		getContentPane().add(btnconsultar);
 		
 		txtInsiraOId = new JTextField();
 		txtInsiraOId.setBounds(23, 29, 74, 20);
-		contentPane.add(txtInsiraOId);
+		getContentPane().add(txtInsiraOId);
 		txtInsiraOId.setColumns(10);
 		
 		txtNome = new JTextField();
 		txtNome.setBounds(23, 108, 231, 23);
-		contentPane.add(txtNome);
+		getContentPane().add(txtNome);
 		txtNome.setColumns(10);
 		
 		txtIdade = new JTextField();
 		txtIdade.setBounds(23, 156, 102, 23);
-		contentPane.add(txtIdade);
+		getContentPane().add(txtIdade);
 		txtIdade.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Nome Completo");
 		lblNewLabel.setBounds(23, 93, 102, 14);
-		contentPane.add(lblNewLabel);
+		getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Idade");
 		lblNewLabel_1.setBounds(23, 142, 48, 14);
-		contentPane.add(lblNewLabel_1);
+		getContentPane().add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Insira o Id da Pessoa Desejada");
 		lblNewLabel_2.setBounds(23, 11, 153, 14);
-		contentPane.add(lblNewLabel_2);
+		getContentPane().add(lblNewLabel_2);
 		
-		JButton btnEditar = new JButton("Editar");
-		btnEditar.setBounds(29, 190, 68, 23);
-		contentPane.add(btnEditar);
+		btneditar = new JButton("Editar");
+		btneditar.setBounds(29, 190, 68, 23);
+		getContentPane().add(btneditar);
 		
 		JButton btnSalvar = new JButton("Salvar");
 		btnSalvar.setBounds(107, 190, 69, 23);
-		contentPane.add(btnSalvar);
+		getContentPane().add(btnSalvar);
 		
-		JButton btnRemover = new JButton("Remover");
-		btnRemover.setBounds(186, 190, 83, 23);
-		contentPane.add(btnRemover);
+		btnremover = new JButton("Remover");
+		btnremover.setBounds(186, 190, 83, 23);
+		getContentPane().add(btnremover);
+		
+		
+		
 	}
+	
+	
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public JButton getBtneditar() {
+		return btneditar;
+	}
+
+	public void setBtneditar(JButton btneditar) {
+		this.btneditar = btneditar;
+	}
+
+	public JButton getBtnremover() {
+		return btnremover;
+	}
+
+	public void setBtnremover(JButton btnremover) {
+		this.btnremover = btnremover;
+	}
+
+	public JButton getBtnconsultar() {
+		return btnconsultar;
+	}
+
+	public void setBtnconsultar(JButton btnconsultar) {
+		this.btnconsultar = btnconsultar;
+	}
+
+	public JTextField getTxtInsiraOId() {
+		
+		return txtInsiraOId;
+	}
+
+	public void setTxtInsiraOId(JTextField txtInsiraOId) {
+		this.txtInsiraOId = txtInsiraOId;
+		
+	}
+
+	public JTextField getTxtNome() {
+		return txtNome;
+	}
+
+	public void setTxtNome(JTextField txtNome) {
+		this.txtNome = txtNome;
+	}
+
+	public JTextField getTxtIdade() {
+		return txtIdade;
+	}
+
+	public void setTxtIdade(JTextField txtIdade) {
+		this.txtIdade = txtIdade;
+	}
+	
 }

@@ -6,6 +6,14 @@ public class Pessoa {
 	private String nome;
 	private int idade;
 	
+	public Pessoa(int id, String nome, int idade) {
+		this.id = id;
+		this.nome = nome;
+		this.idade = idade;
+	}
+
+	public Pessoa() {};
+	
 	public String getNome() {
 		return nome;
 	}
@@ -22,8 +30,8 @@ public class Pessoa {
 		this.idade = idade;
 	}
 	
-	public void setId(int id) {
-		this.id = id;
+	public void setId(int i) {
+		this.id = i;
 	}
 	
 	public int getId() {

@@ -14,8 +14,8 @@ public class InserePessoaController implements ActionListener {
 	private FrameInserir tela;
 	private Pessoa modelo;
 	
-	public InserePessoaController(FrameInserir fp) {
-		this.tela = fp;
+	public InserePessoaController(FrameInserir fi) {
+		this.tela = fi;
 		modelo = new Pessoa();
 		this.tela.getBtnSalvarPessoa().addActionListener(this);
 		this.tela.getBtnLimpar().addActionListener(this);

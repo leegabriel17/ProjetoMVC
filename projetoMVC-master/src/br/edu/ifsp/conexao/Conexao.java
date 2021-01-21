@@ -24,12 +24,12 @@ public class Conexao {
         ds.setUrl("jdbc:oracle:thin:@localhost:1521:xe");
         ds.setUsername("gabriel_lee");
         ds.setPassword("root");
-        //System.out.print(ds.getInitialSize()); 
-        //System.out.print(ds.getMaxIdle());
+
     }
 
     public Connection getConnection() throws SQLException{
         return ds.getConnection();
+        
     }
 	/*private static Conexao conexao = null;
 	private static Connection dataSource = null;

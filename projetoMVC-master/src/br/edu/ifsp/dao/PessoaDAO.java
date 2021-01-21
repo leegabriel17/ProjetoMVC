@@ -41,7 +41,7 @@ public class PessoaDAO {
 			
 			this.con = Conexao.getInstance();
 			
-			String sql = "SELECT * FROM pessoa";
+			String sql = "SELECT * FROM pessoa Order by id ";
 			
 			PreparedStatement pstm = con.getConnection().prepareStatement(sql);
 			ResultSet rs = pstm.executeQuery();
@@ -64,30 +64,69 @@ public class PessoaDAO {
 	}
 	
 	public Pessoa consultarPessoaPorId(int id) {
+		Pessoa pessoa = new Pessoa(); 
+		
 		try {
 			
 			this.con = Conexao.getInstance();
 			
-			String sql = "select id from pessoa where id = ? ";
+			String sql = "select * from pessoa where id = ? ";
 			PreparedStatement pstm = con.getConnection().prepareStatement(sql);
-			pstm.setInt(2, pessoa.getIdade());
-			pstm.setString(1, pessoa.getNome());
-			pstm.setInt(0,pessoa.getId());
-			pstm.executeUpdate();
+			pstm.setInt(1,id);
+			ResultSet rs = pstm.executeQuery();
 			
-			System.out.println("consulta realizado");
+
+			int idP = -1;
+			String nomeCompleto = "";
+			int idade = 0;
+			
+			if(rs.next()) {				
+				id = rs.getInt("id");
+				nomeCompleto = rs.getString("nomecompleto");
+				idade = rs.getInt("idade");				
+				pessoa = new Pessoa(id, nomeCompleto, idade);
+			}
+			
 			
 		} catch(SQLException e) {
 			
-			System.out.println("Problema ao consultar uma pessoa");
+			
 			e.printStackTrace();
-		}	
+		}
+		return pessoa;	
 	}
-	/*
-	public void editarPessoaPorId(int id) {]
 	
+	public void editarPessoaPorId(int id, Pessoa pessoa) {
+				
+			try {
+				this.con = Conexao.getInstance();
+				
+				String sql = "update pessoa set nomecompleto = ?, idade = ? where id = ? ";
+				PreparedStatement pstm = con.getConnection().prepareStatement(sql);
+				pstm.setInt(3, id);
+				pstm.setString(1, pessoa.getNome());
+				pstm.setInt(2, pessoa.getIdade());
+				pstm.executeUpdate();
+				
+				
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
 	}
 
 	public void removerPessoaPorId(int id) {
-	}*/
+		
+		
+		try {
+			this.con = Conexao.getInstance();
+			
+			String sql = "delete from pessoa where id = ? ";
+			PreparedStatement pstm = con.getConnection().prepareStatement(sql);	
+			pstm.setInt(1, id);			
+			pstm.executeUpdate();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
