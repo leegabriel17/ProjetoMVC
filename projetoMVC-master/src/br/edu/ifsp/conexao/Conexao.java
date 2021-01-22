@@ -31,35 +31,5 @@ public class Conexao {
         return ds.getConnection();
         
     }
-	/*private static Conexao conexao = null;
-	private static Connection dataSource = null;
-	private String url = "jdbc:mysql://localhost:3306/dsi";
-	private String usuario = "root";
-	private String senha = "";
-	
-	private Conexao() {
-		
-		try {			
-			this.dataSource = DriverManager.getConnection(url, usuario, senha);
-		}
-		catch (SQLException e) {
-			System.out.println("Erro ao comunicar com o banco de dados");
-			e.printStackTrace();
-		}
 
-	}
-		
-	public Connection getConexao() {
-		return dataSource;
-	}
-	
-	public static Conexao getInstance() {
-		
-		if(conexao == null) {
-			conexao =  new Conexao();
-		}
-		return conexao;
-		
-	}*/
-	
 }

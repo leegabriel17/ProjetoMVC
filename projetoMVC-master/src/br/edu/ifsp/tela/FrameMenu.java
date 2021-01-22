@@ -17,13 +17,11 @@ import javax.swing.JMenuItem;
 
 public class FrameMenu extends JFrame {
 	
-	private JDesktopPane desktop;
-	private JMenuItem mntmInserir;
 
 
 	public FrameMenu() {
 		
-		desktop = new JDesktopPane();
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		

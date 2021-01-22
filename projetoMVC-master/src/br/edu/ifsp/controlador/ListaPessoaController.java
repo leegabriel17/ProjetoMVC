@@ -2,13 +2,6 @@ package br.edu.ifsp.controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
-
-import javax.swing.JOptionPane;
-
-import br.edu.ifsp.dao.PessoaDAO;
-
-import br.edu.ifsp.modelo.Pessoa;
 import br.edu.ifsp.tela.FrameLista;
 
 public class ListaPessoaController implements ActionListener {

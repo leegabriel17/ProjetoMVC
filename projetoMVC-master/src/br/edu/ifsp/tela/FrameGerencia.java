@@ -1,14 +1,11 @@
 package br.edu.ifsp.tela;
 
 
-import java.awt.Font;
+
 
 import javax.swing.JFrame;
-import javax.swing.JSpinner;
-
 import javax.swing.JButton;
 import javax.swing.JTextField;
-import javax.swing.SpinnerNumberModel;
 import javax.swing.JLabel;
 
 public class FrameGerencia extends JFrame {
@@ -30,7 +27,7 @@ public class FrameGerencia extends JFrame {
 		getContentPane().setLayout(null);
 		
 		btnconsultar = new JButton("Consultar");
-		btnconsultar.setBounds(107, 28, 89, 23);
+		btnconsultar.setBounds(107, 28, 95, 23);
 		getContentPane().add(btnconsultar);
 		
 		txtInsiraOId = new JTextField();
@@ -64,12 +61,8 @@ public class FrameGerencia extends JFrame {
 		btneditar.setBounds(29, 190, 68, 23);
 		getContentPane().add(btneditar);
 		
-		JButton btnSalvar = new JButton("Salvar");
-		btnSalvar.setBounds(107, 190, 69, 23);
-		getContentPane().add(btnSalvar);
-		
 		btnremover = new JButton("Remover");
-		btnremover.setBounds(186, 190, 83, 23);
+		btnremover.setBounds(186, 190, 93, 23);
 		getContentPane().add(btnremover);
 		
 		
